@@ -6,12 +6,12 @@ import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react";
 const projectId = "775a4dcfb102a07a0ab19a3bcee9c131";
 
 // 2. Set chains
-const mainnet = {
-  chainId: 1,
-  name: "Ethereum",
+const sepoliaNet = {
+  chainId: 11155111,
+  name: "Sepolia",
   currency: "ETH",
-  explorerUrl: "https://etherscan.io",
-  rpcUrl: "https://cloudflare-eth.com",
+  explorerUrl: "https://sepolia.etherscan.io",
+  rpcUrl: "https://sepolia.infura.io/v3/a338ecde471748a9a7bdddc5537fdafb",
 };
 
 // 3. Create modal
@@ -24,7 +24,7 @@ const metadata = {
 
 createWeb3Modal({
   ethersConfig: defaultConfig({ metadata }),
-  chains: [mainnet],
+  chains: [sepoliaNet],
   projectId,
   enableAnalytics: true, // Optional - defaults to your Cloud configuration
 });
