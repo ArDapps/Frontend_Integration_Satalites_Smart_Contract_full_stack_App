@@ -14,7 +14,6 @@ export const NavBar = () => {
   const [balance, SetBalance] = useState("");
   let provider;
   const getBalance = async () => {
-    console.log("ddd");
     if (window.ethereum == null) {
       console.log("MetaMask not installed; using read-only defaults");
       provider = new ethers.getDefaultProvider();
@@ -22,7 +21,6 @@ export const NavBar = () => {
       provider = new ethers.BrowserProvider(window.ethereum);
       const balance = await provider.getBalance(address);
       const balanceInEth = ethers.formatEther(balance.toString());
-      console.log(balanceInEth, "balanceInEth.toString()");
       SetBalance(balanceInEth);
     }
   };
