@@ -1,20 +1,35 @@
+"use client";
 import { NavBar } from "@/components/NavBar";
 import { GetContract } from "@/hookes/getContract";
+import { useDisconnect, useWeb3ModalAccount } from "@web3modal/ethers/react";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { useEffect } from "react";
 const DashbordPage = () => {
+  const { address, chainId, isConnected } = useWeb3ModalAccount();
+  const { disconnect } = useDisconnect();
+
+  console.log("iam her at layput of dashbaord");
+
   useEffect(() => {
     getAdminAddress();
-  }, [GetContract]);
+  }, [GetContract, address]);
 
+  const router = useRouter();
   const getAdminAddress = async () => {
     console.log("MNMN====>eeee");
 
     const contract = await GetContract();
     console.log("MNMN====>", contract);
-    const admin = await contract.admin();
-    console.log(admin, "AMDIN");
+    const isExistToWatchData = await contract.addressExists(address);
+
+    if (!isExistToWatchData) {
+      disconnect();
+      router.refresh();
+    }
+    console.log(isExistToWatchData, "AMDIN");
   };
+
   return (
     <div className="container mx-auto">
       <NavBar />

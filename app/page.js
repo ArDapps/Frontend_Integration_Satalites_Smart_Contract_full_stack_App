@@ -8,7 +8,7 @@ import {
   useWeb3ModalProvider,
 } from "@web3modal/ethers/react";
 import { SplashPage } from "@/components/SplashPage";
-import DashbordPage from "./dashboard/page";
+import DashbordPage from "../components/dashBoardPage";
 
 export default function Home() {
   const { open } = useWeb3Modal();
