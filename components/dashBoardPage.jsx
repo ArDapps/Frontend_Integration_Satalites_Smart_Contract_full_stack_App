@@ -5,6 +5,7 @@ import { useDisconnect, useWeb3ModalAccount } from "@web3modal/ethers/react";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { useEffect } from "react";
+import { ItemCard } from "./itemCard";
 const DashbordPage = () => {
   const { address, chainId, isConnected } = useWeb3ModalAccount();
   const { disconnect } = useDisconnect();
@@ -37,6 +38,9 @@ const DashbordPage = () => {
         Satellites Blockchain Network{" "}
         <span className=" text-main-green-color">Data</span>{" "}
       </p>
+      <div>
+        <ItemCard />
+      </div>
     </div>
   );
 };
