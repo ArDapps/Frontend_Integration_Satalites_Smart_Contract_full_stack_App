@@ -26,7 +26,7 @@ export const NavBar = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-between pt-8">
+    <div className="flex flex-col md:flex-row justify-between pt-8 items-center">
       <div>
         {" "}
         <Image src={logo} />
