@@ -28,6 +28,8 @@ const DashbordPage = () => {
     if (!isExistToWatchData) {
       disconnect();
       router.refresh();
+
+      return;
     }
     console.log(isExistToWatchData, "AMDIN");
     const getAllSatelliteData = await contract.getAllSatelliteData();
