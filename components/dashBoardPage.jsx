@@ -18,6 +18,7 @@ const DashbordPage = () => {
   const [satelliteData, setSatelliteData] = useState([]);
 
   const router = useRouter();
+
   const getAdminAddress = async () => {
     console.log("MNMN====>eeee");
 

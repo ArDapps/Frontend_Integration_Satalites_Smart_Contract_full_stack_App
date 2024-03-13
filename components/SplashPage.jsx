@@ -25,11 +25,11 @@ export const SplashPage = () => {
           className="absolute top-0 left-0 z-0"
         />
         <div className="relative z-10 flex flex-col items-center">
-          <div className="container mx-auto h-screen flex flex-col justify-center items-center">
+          <div className="container mx-auto h-screen flex flex-col justify-center items-center ">
             <Image
               src={logoWhite}
               alt="logoWhite"
-              className="hover:opacity-80"
+              className="hover:opacity-80 max-w-[400px]  "
             />
             <button
               onClick={() => open()}
